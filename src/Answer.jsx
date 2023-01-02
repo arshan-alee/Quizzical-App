@@ -3,8 +3,7 @@ import { decode } from "html-entities"
 
 export default function Answer(props) {
   const [selectedIndex, setSelectedIndex] = React.useState(-1)
-
-  const [isClicked, setIsClicked] = React.useState()
+  const [isClicked, setIsClicked] = React.useState(false)
 
   function handleToggle(event) {
     setIsClicked(!isClicked)
@@ -18,6 +17,7 @@ export default function Answer(props) {
     let selectedAnswer = event.target.textContent.slice(1)
     console.log("selectedAnswer" + selectedAnswer)
     console.log("props.correctans" + props.correctans)
+    console.log("props.selected" + props.selected)
     if (selectedAnswer == props.correctans) {
       props.setScore(prevScore => prevScore + 1);
     }

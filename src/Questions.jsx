@@ -4,14 +4,8 @@ import { decode } from "html-entities"
 
 export default function Questions(props) {
 
-    const [options, setOptions] = React.useState([])
 
-    React.useEffect(() => {
-        const answers = [props.correctans, ...props.incorrectans]
-        const shuffledAnswers = answers.sort(() => Math.random() - 0.5)
-        setOptions(shuffledAnswers)
-    }, [])
-    const choices = options.map((ans, index) => <Answer key={index} id={index} option={ans} correctans={props.correctans} setScore={props.setScore} isFinished={props.isFinished} />)
+    const choices = props.answers.map((ans, index) => <Answer key={index} id={index} option={ans} selected={props.selected} correctans={props.correctans} setScore={props.setScore} isFinished={props.isFinished} setQuizData={props.setQuizData} />)
 
     return (
         <div>

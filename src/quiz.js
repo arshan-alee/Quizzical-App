@@ -1,11 +1,11 @@
 export default {
     "results": [{
-        "category": "",
-        "type": "",
-        "difficulty": "",
-        "question": "",
-        "correct_answer": "",
-        "incorrect_answers": ["", "", ""]
+        "key": '',
+        "id": '',
+        "question": '',
+        "correct": '',
+        "selected": '',
+        "answers": ['', '', '', '']
     }]
 }
 // [{"category":"Celebrities","type":"multiple","difficulty":"hard","question":"How tall is Tom Cruise?","correct_answer":"5&prime; 7&Prime;","incorrect_answers":["5&prime; 9&Prime;","5&prime; 4&Prime;","5&prime; 5&Prime;"]},
