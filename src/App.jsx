@@ -33,11 +33,12 @@ function App() {
             id: nanoid(),
             question: prevdata[i].question,
             correctans: prevdata[i].correct_answer,
-            selected: false,
+            selected: undefined,
             answers : answersArr.sort((a,b) => Math.random() - 0.5)
           }
         }
         setQuizData(reconstructData)
+        console.log(quizData)
         })
         
       })
@@ -56,3 +57,4 @@ function App() {
 }
 
 export default App
+
