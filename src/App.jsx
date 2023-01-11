@@ -18,29 +18,27 @@ function App() {
       .then(res => res.json())
       .then(data => (setQuizData(data.results)))
       .then(() => {
-        setQuizData(prevdata=>{
-        
-        const reconstructData = new Array(prevdata.length)
-        for (let i = 0; i < prevdata.length; i++) {
-          let correctAnswer = prevdata[i].correct_answer
-          let incorrectAnswers = []
-          for (let j = 0; j < prevdata[i].incorrect_answers.length; j++) {
-            incorrectAnswers.push(prevdata[i].incorrect_answers[j])
+        setQuizData(prevdata => {
+          const reconstructData = new Array(prevdata.length)
+          for (let i = 0; i < prevdata.length; i++) {
+            let correctAnswer = prevdata[i].correct_answer
+            let incorrectAnswers = []
+            for (let j = 0; j < prevdata[i].incorrect_answers.length; j++) {
+              incorrectAnswers.push(prevdata[i].incorrect_answers[j])
+            }
+            let answersArr = [correctAnswer, ...incorrectAnswers]
+            reconstructData[i] = {
+              key: nanoid(),
+              id: nanoid(),
+              question: prevdata[i].question,
+              correctans: prevdata[i].correct_answer,
+              selected: undefined,
+              answers: answersArr.sort((a, b) => Math.random() - 0.5)
+            }
           }
-          let answersArr= [correctAnswer, ...incorrectAnswers]
-          reconstructData[i] = {
-            key: nanoid(),
-            id: nanoid(),
-            question: prevdata[i].question,
-            correctans: prevdata[i].correct_answer,
-            selected: undefined,
-            answers : answersArr.sort((a,b) => Math.random() - 0.5)
-          }
-        }
-        setQuizData(reconstructData)
-        console.log(quizData)
+          setQuizData(reconstructData)
+          console.log(quizData)
         })
-        
       })
   }, [])
 
@@ -51,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <Blobs />
-      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData}/> : <Startpage handleStart={handleStart} />}
+      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData} /> : <Startpage handleStart={handleStart} />}
     </div>
   )
 }
