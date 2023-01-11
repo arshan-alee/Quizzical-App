@@ -40,7 +40,7 @@ function App() {
           console.log(quizData)
         })
       })
-  }, [])
+  }, [isStart])
 
   function handleStart() {
     setStart(true)
@@ -49,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <Blobs />
-      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData} /> : <Startpage handleStart={handleStart} />}
+      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData}  setStart={setStart}/> : <Startpage handleStart={handleStart} />}
     </div>
   )
 }
