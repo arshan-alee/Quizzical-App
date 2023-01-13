@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Questions from './Questions'
-import Startpage from './Startpage'
 
 export default function QuizPage(props) {
 
@@ -44,10 +43,12 @@ export default function QuizPage(props) {
 
     return (
         <div className='quizpage'>{quizCard}
-            {!isFinished?<button type="submit" className='button check' onClick={() => setIsFinished(true)}>Check Answers</button>:<>
-            <h3>You scored {score}/7 correct answers</h3>
-            <button type="submit" className='button check' onClick={playAgain}>Play Again</button>
-            </>}</div>
+        <div className='check'>    
+            {!isFinished?<button type="submit" className='button checkbtn' onClick={() => setIsFinished(true)}>Check Answers</button>:<>
+            <h3 className='score'>You scored {score}/{props.selectedAmount} correct answers</h3>
+            <button type="submit" className='button checkbtn' onClick={playAgain}>Play Again</button>
+        </>}
+            </div></div>
 
 
     )

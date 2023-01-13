@@ -10,11 +10,15 @@ import { nanoid } from 'nanoid'
 function App() {
   const [isStart, setStart] = React.useState(false)
   const [quizData, setQuizData] = React.useState(quiz.results)
+  const [selectedCategory, setSelectedCategory] = React.useState('');
+  const [selectedDifficulty, setSelectedDifficulty] = React.useState('');
+  const [selectedAmount, setSelectedAmount] = React.useState(10);
+  const [selectedType, setSelectedType] = React.useState('');
 
-
+  const url = `https://opentdb.com/api.php?amount=${selectedAmount}${selectedCategory}${selectedDifficulty}${selectedType}`
 
   React.useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=7&category=9&difficulty=hard&type=multiple')
+    fetch(url)
       .then(res => res.json())
       .then(data => (setQuizData(data.results)))
       .then(() => {
@@ -45,11 +49,27 @@ function App() {
   function handleStart() {
     setStart(true)
   }
+  
+  function handleCategory(event) {
+    setSelectedCategory(event.target.value)
+  }
+
+  function handleDifficulty(event) {
+    setSelectedDifficulty(event.target.value)
+  }
+
+  function handleAmountOfQuestions(event) {
+    setSelectedAmount(event.target.value)
+  }
+  function handleType(event) {
+    setSelectedType(event.target.value)
+  }
 
   return (
     <div className="App">
       <Blobs />
-      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData}  setStart={setStart}/> : <Startpage handleStart={handleStart} />}
+      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData}  setStart={setStart} selectedAmount={selectedAmount} /> : <Startpage handleStart={handleStart} selectedCategory={selectedCategory} selectedDifficulty={selectedDifficulty} selectedAmount={selectedAmount} handleCategory={handleCategory} handleDifficulty={handleDifficulty} handleAmountOfQuestions={handleAmountOfQuestions}
+      />}
     </div>
   )
 }

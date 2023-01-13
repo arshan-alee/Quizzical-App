@@ -2,7 +2,7 @@ body {
   margin: 0;
   text-align: center;
   font-family: 'Karla', sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 24px;
   font-weight: 400;
   color: rgba(3, 0, 0, 0.87);
@@ -42,7 +42,9 @@ body {
   align-items: center;
   position: absolute;
 }
-
+.apptitle{
+  font-size: 4em;
+}
 .answers {
   font-weight: 500;
   color: #293264;
@@ -82,13 +84,81 @@ hr {
   width: 200px;
 }
 
-.check {
+.checkbtn {
   border: 0px;
   border-radius: 10px;
   background-color: #293264;
   color: #F5F7FB;
   cursor: pointer;
-  height: 35px;
-  width: 120px;
+  height: 45px;
+  width: 150px;
   margin: 30px;
+}
+
+.description{
+  margin-top: 0;
+  font-size: 20px;
+}
+
+input{
+  font-family: 'Karla', sans-serif;
+  font-size: 1em;
+  position: relative;
+  height: 20px;
+  line-height: 1;
+  overflow: hidden;
+  border-radius: .25em;
+  padding-bottom: 10px;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+input:focus {
+  border-color: #80bdff;
+}
+
+select {
+  font-family: 'Karla', sans-serif;
+  padding: .5em;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  appearance: none;
+  overflow-y: hidden;
+  
+}
+
+select:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.select {
+  padding: 1px;
+  margin-left: 10px;
+}
+
+.amount{
+  margin-top: 10px;
+}
+
+.options{
+  font-size: 1em;
+  line-height: 55px;
+  padding: 30px;
+  margin-bottom: 10px;
+}
+
+.check{
+  display: flex;
+  justify-content: center;
+}
+
+.score{
+  align-items: center;
+  display: flex
 }
