@@ -42,9 +42,11 @@ body {
   align-items: center;
   position: absolute;
 }
-.apptitle{
+
+.apptitle {
   font-size: 4em;
 }
+
 .answers {
   font-weight: 500;
   color: #293264;
@@ -95,12 +97,12 @@ hr {
   margin: 30px;
 }
 
-.description{
+.description {
   margin-top: 0;
   font-size: 20px;
 }
 
-input{
+input {
   font-family: 'Karla', sans-serif;
   font-size: 1em;
   position: relative;
@@ -112,6 +114,7 @@ input{
   border: 1px solid #ced4da;
   color: #495057;
 }
+
 input:focus {
   border-color: #80bdff;
 }
@@ -128,13 +131,13 @@ select {
   border-radius: .25rem;
   appearance: none;
   overflow-y: hidden;
-  
+
 }
 
 select:focus {
   outline: none;
   border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
 .select {
@@ -142,23 +145,49 @@ select:focus {
   margin-left: 10px;
 }
 
-.amount{
+.amount {
   margin-top: 10px;
 }
 
-.options{
+.options {
   font-size: 1em;
   line-height: 55px;
   padding: 30px;
   margin-bottom: 10px;
 }
 
-.check{
+.check {
   display: flex;
   justify-content: center;
 }
 
-.score{
+.score {
   align-items: center;
   display: flex
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .apptitle {
+    font-size: 3em;
+  }
+
+  .quizpage {
+    width: 90%;
+  }
+
+  input {
+    font-size: 0.8em;
+  }
+
+  select {
+    font-size: 0.8em;
+  }
+
+  .checkbtn {
+    width: 100px;
+  }
 }
