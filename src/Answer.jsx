@@ -14,9 +14,6 @@ export default function Answer(props) {
     const selectedAnswer = event.target.textContent
     setIsClicked(true)
     props.selectAnswer(props.questionid,selectedAnswer)
-    console.log('selected answer'+ selectedAnswer)
-    console.log('correct answer'+ props.correctans)
-
   }
 
   let styles ={}

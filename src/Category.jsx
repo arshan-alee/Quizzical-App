@@ -4,7 +4,7 @@ export default function Category(props) {
     return (
         <div>
             <label>Select a Category:</label>
-            <select className='select' value={props.selectedCategory} onChange={props.handleCategory}>
+            <select className='select' value={props.category} onChange={props.handleCategory}>
                 <option value="">Any Category</option>
                 <option value="&category=27">Animals</option>
                 <option value="&category=25">Art</option>

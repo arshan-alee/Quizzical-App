@@ -10,10 +10,10 @@ export default function Startpage(props) {
             <h1 className='apptitle'>Quizzical App</h1>
             <p className="description">A fun and engaging trivia game app.</p>
             <div className='options'>
-                <Amount selectedAmount={props.selectedAmount} handleAmountOfQuestions={props.handleAmountOfQuestions} />
-                <Category selectedCategory={props.selectedCategory} handleCategory={props.handleCategory} />
-                <Difficulty selectedDifficulty={props.selectedDifficulty} handleDifficulty={props.handleDifficulty} />
-                <Type selectedType={props.selectedType} handleType={props.handleType}/>
+                <Amount amount={props.amount} handleAmountOfQuestions={props.handleAmountOfQuestions} />
+                <Category category={props.category} handleCategory={props.handleCategory} />
+                <Difficulty difficulty={props.difficulty} handleDifficulty={props.handleDifficulty} />
+                <Type type={props.type} handleType={props.handleType}/>
             </div>
 
 

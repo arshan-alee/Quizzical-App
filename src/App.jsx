@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './App.css'
 import Blobs from './Blobs'
 import QuizPage from './QuizPage'
@@ -10,12 +10,12 @@ import { nanoid } from 'nanoid'
 function App() {
   const [isStart, setStart] = React.useState(false)
   const [quizData, setQuizData] = React.useState(quiz.results)
-  const [selectedCategory, setSelectedCategory] = React.useState('');
-  const [selectedDifficulty, setSelectedDifficulty] = React.useState('');
-  const [selectedAmount, setSelectedAmount] = React.useState(10);
-  const [selectedType, setSelectedType] = React.useState('');
+  const [category, setCategory] = React.useState('');
+  const [difficulty, setDifficulty] = React.useState('');
+  const [amount, setAmount] = React.useState(10);
+  const [type, setType] = React.useState('');
 
-  const url = `https://opentdb.com/api.php?amount=${selectedAmount}${selectedCategory}${selectedDifficulty}${selectedType}`
+  const url = `https://opentdb.com/api.php?amount=${amount}${category}${difficulty}${type}`
 
   React.useEffect(() => {
     fetch(url)
@@ -51,24 +51,24 @@ function App() {
   }
   
   function handleCategory(event) {
-    setSelectedCategory(event.target.value)
+    setCategory(event.target.value)
   }
 
   function handleDifficulty(event) {
-    setSelectedDifficulty(event.target.value)
+    setDifficulty(event.target.value)
   }
 
   function handleAmountOfQuestions(event) {
-    setSelectedAmount(event.target.value)
+    setAmount(event.target.value)
   }
   function handleType(event) {
-    setSelectedType(event.target.value)
+    setType(event.target.value)
   }
 
   return (
     <div className="App">
       <Blobs />
-      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData}  setStart={setStart} selectedAmount={selectedAmount} /> : <Startpage handleStart={handleStart} selectedCategory={selectedCategory} selectedDifficulty={selectedDifficulty} selectedAmount={selectedAmount} handleCategory={handleCategory} handleDifficulty={handleDifficulty} handleAmountOfQuestions={handleAmountOfQuestions}
+      {isStart ? <QuizPage quizData={quizData} setQuizData={setQuizData}  setStart={setStart} amount={amount} /> : <Startpage handleStart={handleStart} category={category} difficulty={difficulty} amount={amount} type={type} handleCategory={handleCategory} handleDifficulty={handleDifficulty} handleAmountOfQuestions={handleAmountOfQuestions} handleType={handleType}
       />}
     </div>
   )
