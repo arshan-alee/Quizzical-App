@@ -181,6 +181,9 @@ select:focus {
     width: 80%;
   }
 
+  .amount {
+    margin-top: 5px;
+  }
   /* input {
     font-size: 0.8em;
     
@@ -192,6 +195,7 @@ select:focus {
 
   .start {
     width: 150px;
+    margin-top: 10px;
   }
 
   .checkbtn {
