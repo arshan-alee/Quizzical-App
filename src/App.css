@@ -84,6 +84,7 @@ hr {
   font-size: 16px;
   height: 50px;
   width: 200px;
+  margin-top: 20px;
 }
 
 .checkbtn {
@@ -106,6 +107,7 @@ input {
   font-family: 'Karla', sans-serif;
   font-size: 1em;
   position: relative;
+  width: 5em;
   height: 20px;
   line-height: 1;
   overflow: hidden;
@@ -137,7 +139,7 @@ select {
 select:focus {
   outline: none;
   border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+  box-shadow: 0 0 0 0.2rem rgb(0, 123, 255, .25);
 }
 
 .select {
@@ -146,7 +148,7 @@ select:focus {
 }
 
 .amount {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .options {
@@ -168,26 +170,51 @@ select:focus {
 
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 
   .apptitle {
-    font-size: 3em;
+    font-size: 3.2em;
   }
 
   .quizpage {
-    width: 90%;
+    width: 80%;
   }
 
-  input {
+  /* input {
     font-size: 0.8em;
-  }
+    
+  } */
 
-  select {
+  /* select {
     font-size: 0.8em;
+  } */
+
+  .start {
+    width: 150px;
   }
 
   .checkbtn {
     width: 100px;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+  /* Styles for tablets */
+  body {
+    font-size: 0.8em;
+  }
+  .apptitle {
+    font-size: 3.5em;
+  }
+  .quizpage {
+    width: 90%;
+  }
+  .start {
+    width: 170px;
+  }
+
+  .checkbtn {
+    width: 120px;
   }
 }
